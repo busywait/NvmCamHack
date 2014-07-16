@@ -61,6 +61,7 @@ namespace SelfHost
                             Console.WriteLine("Client received: {0}", getTask.Result);
                         }
                     });
+
                 Console.ReadLine();
             }
             catch (Exception e)
