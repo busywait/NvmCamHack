@@ -9,18 +9,13 @@ using System.Web.Http.SelfHost;
 
 namespace SelfHost
 {
-    public class HelloController : ApiController
-    {
-        public string Get()
-        {
-            return "Hello, world!";
-        }
-    }
 
     class Program
     {
         static readonly Uri _baseAddress = new Uri("http://localhost:50231/");
-        static readonly Uri _address = new Uri(_baseAddress, "/api/hello");
+        static readonly Uri _address = new Uri(_baseAddress, "/api/camera");
+
+
 
         static void Main(string[] args)
         {
