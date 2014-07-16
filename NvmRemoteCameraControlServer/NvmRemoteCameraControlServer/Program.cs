@@ -13,7 +13,7 @@ namespace SelfHost
     class Program
     {
         static readonly Uri _baseAddress = new Uri("http://localhost:50231/");
-        static readonly Uri _address = new Uri(_baseAddress, "/api/camera");
+        static readonly Uri _address = new Uri(_baseAddress, "/api/camera/moveleft");
 
 
 
@@ -24,6 +24,11 @@ namespace SelfHost
             {
                 // Set up server configuration
                 HttpSelfHostConfiguration config = new HttpSelfHostConfiguration(_baseAddress);
+
+                config.Routes.MapHttpRoute(
+                    name: "MoveLeft",
+                    routeTemplate: "api/{controller}/{action}"
+                );
 
                 config.Routes.MapHttpRoute(
                     name: "DefaultApi",
